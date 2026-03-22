@@ -10,7 +10,7 @@
 
 ## Usage
 
-- Clone the repository `git clone https://github.com/domeniconappo/books`
+- Clone the repository `git clone https://github.com/domeniconappo/books_exercise`
 - Install UV `curl -LsSf https://astral.sh/uv/install.sh | sh`
 - cd `books`
 - Build the environment with `make build`
