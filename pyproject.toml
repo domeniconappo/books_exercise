@@ -1,0 +1,42 @@
+[project]
+name = "books"
+version = "1.0.0"
+description = "Library Management API"
+requires-python = ">=3.13"
+authors = [
+  {name = "Domenico Nappo", email = "domenico.nappo@gmail.com"},
+]
+dependencies = [
+    "aiosqlite>=0.22.1",
+    "fastapi[standard]>=0.135.1",
+    "pydantic-settings>=2.13.1",
+    "sqlmodel>=0.0.37",
+    "uvicorn[standard]>=0.41.0",
+]
+readme = "README.md"
+
+[dependency-groups]
+dev = [
+  "ipdb>=0.13.11,<0.14",
+  "ipython>=9",
+  "pytest>=7,<9",
+  "pytest-env<1.5.0",
+  "pytest-cov>=4.0.0,<5",
+  "pytest-mock>=3.14.0,<4",
+  "pytest-asyncio>=0.24",
+  "ruff>=0.1.14,<0.2",
+  "mypy>=1.9.0,<2",
+]
+
+[tool.pytest.ini_options]
+addopts = "--junitxml=/tmp/pytest_report.xml --cov=. --cov-report=term --cov-report=xml:/tmp/coverage.xml --cov-report=html:/tmp/htmlcov"
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_test_loop_scope = "session"
+asyncio_default_fixture_loop_scope = "session"
+
+[tool.coverage.run]
+source = ["app"]
+
+[tool.coverage.report]
+show_missing = true
