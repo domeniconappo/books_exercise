@@ -1,4 +1,4 @@
-# Library
+# Library: A REST API to manage books
 
 ## Tech stack
 
