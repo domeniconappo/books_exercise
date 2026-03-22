@@ -3,10 +3,11 @@ import typing as tp
 from fastapi import Depends
 from sqlalchemy import create_engine
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
-from sqlalchemy.orm import DeclarativeBase, sessionmaker
-from sqlmodel import Session
+from sqlalchemy.orm import sessionmaker
 
-from app.config import settings
+from app.config import make_settings
+
+settings = make_settings()
 
 engine = create_async_engine(
     settings.DATABASE_URL,

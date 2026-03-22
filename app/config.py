@@ -10,4 +10,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str
 
 
-settings = Settings()
+def make_settings() -> "Settings":
+    """Lazy settings"""
+    settings = Settings()
+    return settings
